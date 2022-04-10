@@ -21,7 +21,4 @@
   - mvn spring-boot:run
 ##### Openbrower call API http://localhost:8080/play/multiple_choice/8258 to check data
 ## List API:
-- API get Data for Multiple Choice
-  - http://localhost:8080/play/multiple_choice/{object_id}
-- API get Data for ColumeJoin
-  - http://localhost:8080/play/column_join/{object_id}
+  - http://localhost:8080/swagger-ui/index.html#/
