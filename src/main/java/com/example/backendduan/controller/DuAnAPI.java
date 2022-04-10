@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/play")
+@RequestMapping("/play/")
 public class DuAnAPI {
     @Autowired
     private DuAnService duAnService;
@@ -20,7 +20,7 @@ public class DuAnAPI {
     @Autowired
     private MultipleChoiceModelToDTO multipleChoiceModelToDTO;
 
-    @GetMapping("/multiple_choice/{object_id}")
+    @GetMapping("multiple_choice/{object_id}")
     public ResponseEntity<MultipleChoiceDTO> getMultipleChoice(@PathVariable(name = "object_id") String objectId)
     {
         return new ResponseEntity<MultipleChoiceDTO>(multipleChoiceModelToDTO.transferToDTO(duAnService.getMultipleChoiceByObjectID(objectId)), HttpStatus.OK);
