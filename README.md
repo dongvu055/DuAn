@@ -8,7 +8,7 @@
 - Check version maven:
   - Run cmd: 
     - mvn --version
-- Add database from Backend-DuAn/sql/duan.sql 
+- Add database from script Backend-DuAn/sql/duan.sql t 
 - Connect Application to Database:
 ##### Cd to src/main/resources/application.properties and Edit
   - spring.datasource.url=jdbc:mysql://localhost:3306/duan (database name of you )
