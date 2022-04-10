@@ -1,5 +1,5 @@
-#Guild run Application
-##Config  
+# Guild run Application
+## Config  
 - Download and install Java 8 https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html
 - Check version java : 
   - Run cmd : 
@@ -9,8 +9,8 @@
   - Run cmd: 
     - mvn --version
 - Add database from Backend-DuAn/sql/duan.sql 
-##Run Application   
-  ####After configuring the installation successfully
+## Run Application   
+  #### After configuring the installation successfully
 - Open terminal then cd to Backend-DuAn ( Directory contain pom.xml )
 - Run command:
   - mvn spring-boot:run
