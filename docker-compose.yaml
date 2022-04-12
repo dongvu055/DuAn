@@ -17,7 +17,7 @@ services:
     networks:
       - dongnetwork
   app:
-    image: duan:latest
+    image: dongvu055/deploycloud:duan
     ports:
       - 8080:8080
     networks:
