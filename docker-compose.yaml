@@ -1,0 +1,30 @@
+version: "2.1"
+volumes:
+  mysql_data:
+services:
+  database:
+    image: mysql:latest
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    environment:
+        MYSQL_ROOT_PASSWORD: "root"
+        MYSQL_DATABASE: "duan"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    networks:
+      - dongnetwork
+  app:
+    image: duan:latest
+    ports:
+      - 8080:8080
+    networks:
+      - dongnetwork
+    depends_on:
+      database:
+        condition: service_started
+networks:
+  dongnetwork:
+    driver: bridge

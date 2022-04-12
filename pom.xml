@@ -48,6 +48,12 @@
             <version>1.6.7</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>6.4.3</version>
+        </dependency>
+
 
     </dependencies>
 
