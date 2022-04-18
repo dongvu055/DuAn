@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS `play` (
                         `id` int NOT NULL AUTO_INCREMENT,
                         `question_name` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
                         `question_type` varchar(40) DEFAULT NULL,
-                        `description` json DEFAULT NULL,
+                        `description` varchar(10000) DEFAULT NULL,
                         `correct_answer` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
                         `is_active` tinyint DEFAULT '0',
                         PRIMARY KEY (`id`)
