@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 public class ConvertHttpServletRequest extends UsernamePasswordAuthenticationFilter {
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
+
         return new ObjectAuthenticationBasic();
     }
 }

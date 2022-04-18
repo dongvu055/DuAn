@@ -17,7 +17,7 @@ public class PlayModelDTO {
         playDTO.setQuestionType(playModel.getQuestionType());
         playDTO.setDescription(playModel.getDescription());
         playDTO.setCorrectAnswer(playModel.getCorrectAnswer());
-        playDTO.setActive(playModel.isActive());
+        playDTO.setNumberOfUses(playModel.getNumberOfUses());
         return playDTO;
     }
 
@@ -37,7 +37,7 @@ public class PlayModelDTO {
                 .questionType(playDTO.getQuestionType())
                 .description(playDTO.getDescription())
                 .correctAnswer(playDTO.getCorrectAnswer())
-                .isActive(playDTO.isActive())
+                .numberOfUses(playDTO.getNumberOfUses())
                 .build();
     }
 

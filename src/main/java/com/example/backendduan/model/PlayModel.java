@@ -17,6 +17,6 @@ public class PlayModel {
 
     private String correctAnswer;
 
-    private boolean isActive;
+    private int numberOfUses;
 
 }

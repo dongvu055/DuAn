@@ -14,11 +14,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/","/play/**","/save")
-                .permitAll()
-                .anyRequest()
-                .authenticated()
-                .and()
-                .formLogin()
-                .defaultSuccessUrl("/admin",true);
+                .permitAll();
+//                .anyRequest()
+//                .authenticated()
+//                .and()
+//                .formLogin()
+//                .defaultSuccessUrl("/admin",true);
     }
 }

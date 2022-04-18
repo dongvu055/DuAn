@@ -10,6 +10,7 @@ import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -30,5 +31,18 @@ public class DuAnService {
             return "SAVE NOT SUCCESS";
         else
             return "SAVE SUCCESFULLY : " + save;
+    }
+
+    public List<PlayModel> modifierActive(List<Integer> listId) {
+        List<PlayModel> playModels = new ArrayList<>();
+        listId.forEach(id -> {
+            if (playRepository.existsById(id)) {
+                PlayDAO byId = playRepository.getById(id);
+                byId.setNumberOfUses(byId.getNumberOfUses() + 1);
+                playRepository.save(byId);
+                playModels.add(new PlayDAOModel().transferToModel(playRepository.getById(id)));
+            }
+        });
+        return playModels;
     }
 }

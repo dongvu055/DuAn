@@ -27,7 +27,7 @@ public class PlayDAO {
     @Column(name = "correct_answer")
     private String correctAnswer;
 
-    @Column(name = "is_active")
-    private boolean isActive;
+    @Column(name = "number_of_uses")
+    private int numberOfUses;
 
 }

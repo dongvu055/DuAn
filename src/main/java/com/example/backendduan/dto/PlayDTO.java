@@ -27,5 +27,5 @@ public class PlayDTO {
 
     private String correctAnswer;
 
-    private boolean isActive;
+    private int numberOfUses;
 }

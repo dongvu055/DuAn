@@ -17,7 +17,7 @@ public class PlayDAOModel {
                 .questionType(playDAO.getQuestionType())
                 .description(playDAO.getDescription())
                 .correctAnswer(playDAO.getCorrectAnswer())
-                .isActive(playDAO.isActive())
+                .numberOfUses(playDAO.getNumberOfUses())
                 .build();
     }
 
@@ -37,7 +37,7 @@ public class PlayDAOModel {
         playDAO.setQuestionType(playModel.getQuestionType());
         playDAO.setDescription(playModel.getDescription());
         playDAO.setCorrectAnswer(playModel.getCorrectAnswer());
-        playDAO.setActive(playModel.isActive());
+        playDAO.setNumberOfUses(playModel.getNumberOfUses());
         return playDAO;
     }
 

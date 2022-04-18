@@ -8,11 +8,11 @@ CREATE TABLE IF NOT EXISTS `play` (
                         `question_type` varchar(40) DEFAULT NULL,
                         `description` varchar(10000) DEFAULT NULL,
                         `correct_answer` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-                        `is_active` tinyint DEFAULT '0',
+                        `number_of_uses` int DEFAULT 0,
                         PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-INSERT INTO duan.play (question_name, question_type, description, correct_answer, is_active)
+INSERT INTO duan.play (question_name, question_type, description, correct_answer, number_of_uses)
 VALUES ('Đâu là cơ quan ngôn luận của Đông Dương Cộng sản đảng?', 'multiplechoice',
         '{"option1": "Báo Thanh niên", "option2": "Báo Đỏ", "option3": "Báo Giải phóng", "option4": "Báo Búa liềm"}',
         'option4', 0),
@@ -31,7 +31,7 @@ VALUES ('Đâu là cơ quan ngôn luận của Đông Dương Cộng sản đả
        ('cau 4', 'multiplechoice', '{"option1": "1", "option2": "2", "option3": "3", "option4": "4"}', 'option1', 0),
        ('cau 5', 'multiplechoice', '{"option1": "1", "option2": "2", "option3": "3", "option4": "4"}', 'option1', 0),
        ('cau 6', 'multiplechoice', '{"option1": "1", "option2": "2", "option3": "3", "option4": "4"}', 'option1', 0);
-INSERT INTO duan.play (question_name, question_type, description, correct_answer, is_active)
+INSERT INTO duan.play (question_name, question_type, description, correct_answer, number_of_uses)
 VALUES ('cau 7', 'multiplechoice', '{"option1": "1", "option2": "2", "option3": "3", "option4": "4"}', 'option1', 0),
        ('cau 8', 'multiplechoice', '{"option1": "1", "option2": "2", "option3": "3", "option4": "4"}', 'option1', 0),
        ('cau 9', 'multiplechoice', '{"option1": "1", "option2": "2", "option3": "3", "option4": "4"}', 'option1', 0),
@@ -42,7 +42,7 @@ VALUES ('cau 7', 'multiplechoice', '{"option1": "1", "option2": "2", "option3": 
        ('cau 14', 'multiplechoice', '{"option1": "1", "option2": "2", "option3": "3", "option4": "4"}', 'option1', 0),
        ('cau 15', 'multiplechoice', '{"option1": "1", "option2": "2", "option3": "3", "option4": "4"}', 'option1', 0),
        ('cau 16', 'multiplechoice', '{"option1": "1", "option2": "2", "option3": "3", "option4": "4"}', 'option1', 0);
-INSERT INTO duan.play (question_name, question_type, description, correct_answer, is_active)
+INSERT INTO duan.play (question_name, question_type, description, correct_answer, number_of_uses)
 VALUES ('cau 17', 'multiplechoice', '{"option1": "1", "option2": "2", "option3": "3", "option4": "4"}', 'option1', 0),
        ('cau 18', 'multiplechoice', '{"option1": "1", "option2": "2", "option3": "3", "option4": "4"}', 'option1', 0),
        ('cau 19', 'multiplechoice', '{"option1": "1", "option2": "2", "option3": "3", "option4": "4"}', 'option1', 0),
@@ -53,9 +53,19 @@ VALUES ('cau 17', 'multiplechoice', '{"option1": "1", "option2": "2", "option3":
        ('cau 24', 'multiplechoice', '{"option1": "1", "option2": "2", "option3": "3", "option4": "4"}', 'option1', 0),
        ('cau 25', 'multiplechoice', '{"option1": "1", "option2": "2", "option3": "3", "option4": "4"}', 'option1', 0),
        ('cau 26', 'multiplechoice', '{"option1": "1", "option2": "2", "option3": "3", "option4": "4"}', 'option1', 0);
-INSERT INTO duan.play (question_name, question_type, description, correct_answer, is_active)
+INSERT INTO duan.play (question_name, question_type, description, correct_answer, number_of_uses)
 VALUES ('cau 27', 'multiplechoice', '{"option1": "1", "option2": "2", "option3": "3", "option4": "4"}', 'option1', 0),
        ('cau 28', 'multiplechoice', '{"option1": "1", "option2": "2", "option3": "3", "option4": "4"}', 'option1', 0),
        ('cau 29', 'multiplechoice', '{"option1": "1", "option2": "2", "option3": "3", "option4": "4"}', 'option1', 0),
        ('cau 30', 'multiplechoice', '{"option1": "1", "option2": "2", "option3": "3", "option4": "4"}', 'option1', 0),
        ('cau 31', 'multiplechoice', '{"option1": "1", "option2": "2", "option3": "3", "option4": "4"}', 'option1', 0);
+
+CREATE TABLE IF NOT EXISTS `admin` (
+            `id` int NOT NULL AUTO_INCREMENT,
+            `username` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+            `password` varchar(40) DEFAULT NULL,
+             PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO duan.admin (username, password)
+VALUES ('dong1', 'dong123');
