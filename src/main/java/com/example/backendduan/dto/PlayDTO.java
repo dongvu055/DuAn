@@ -4,19 +4,28 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /*
     Trả dữ liệu về cho các câu hỏi thuộc loại trắc nghiệm
 * */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class MultipleChoiceDTO {
-    private String objectId;
-    private String roomName;
+public class PlayDTO {
+
+    private int id;
+
     private String questionName;
-    private String answer1;
-    private String answer2;
-    private String answer3;
-    private String answer4;
+
+    private String questionType;
+
+    private String description;
+
     private String correctAnswer;
+
+    private boolean isActive;
 }

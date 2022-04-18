@@ -1,34 +1,31 @@
 package com.example.backendduan.controller;
 
-import com.example.backendduan.dao.MultipleChoiceDAO;
-import com.example.backendduan.dto.MultipleChoiceDTO;
+import com.example.backendduan.dto.PlayDTO;
 import com.example.backendduan.service.DuAnService;
-import com.example.backendduan.transfer.MultipleChoiceModelToDTO;
+import com.example.backendduan.transfer.PlayModelDTO;
+import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
-@RequestMapping("/play/")
 public class DuAnAPI {
     @Autowired
     private DuAnService duAnService;
 
-    @Autowired
-    private MultipleChoiceModelToDTO multipleChoiceModelToDTO;
-
-    @GetMapping("multiple_choice/{object_id}")
-    public ResponseEntity<MultipleChoiceDTO> getMultipleChoice(@PathVariable(name = "object_id") String objectId)
-    {
-        return new ResponseEntity<MultipleChoiceDTO>(multipleChoiceModelToDTO.transferToDTO(duAnService.getMultipleChoiceByObjectID(objectId)), HttpStatus.OK);
+    @GetMapping("/play")
+    public ResponseEntity<List<PlayDTO>> getAll() {
+        List<PlayDTO> playDTOS = new PlayModelDTO().transferListDTO(duAnService.getall());
+        return new ResponseEntity<>(playDTOS, HttpStatus.OK);
     }
-    @GetMapping("column_join/{object_id}")
-    public void getColumnJoin()
-    {
 
+    @PostMapping("/save")
+    public ResponseEntity<String> save(@RequestBody(required = true) PlayDTO playDTO) {
+        if (ObjectUtils.isEmpty(playDTO.getQuestionName()))
+            return new ResponseEntity<>("REQUIRED BODY",HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(duAnService.save(playDTO), HttpStatus.OK);
     }
 }
